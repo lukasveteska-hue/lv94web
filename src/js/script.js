@@ -41,6 +41,10 @@ const TRANSLATIONS = Object.freeze({
         previousPhoto: "Předchozí fotografie",
         nextPhoto: "Další fotografie",
         photoSlider: "Fotografie vozidla",
+        sliderHint: "Posuňte galerii nebo použijte šipky",
+        openPhoto: "Otevřít fotografii",
+        closeGallery: "Zavřít galerii",
+        galleryTitle: "Galerie vozidla",
         exteriorAlt: "Exteriér vozidla — fotografie bude doplněna",
         interiorAlt: "Interiér vozidla — fotografie bude doplněna",
         detailAlt: "Detail vozidla — fotografie bude doplněna",
@@ -95,6 +99,10 @@ const TRANSLATIONS = Object.freeze({
         previousPhoto: "Previous photo",
         nextPhoto: "Next photo",
         photoSlider: "Vehicle photos",
+        sliderHint: "Drag the gallery or use the arrows",
+        openPhoto: "Open photo",
+        closeGallery: "Close gallery",
+        galleryTitle: "Vehicle gallery",
         exteriorAlt: "Vehicle exterior — photo to be supplied",
         interiorAlt: "Vehicle interior — photo to be supplied",
         detailAlt: "Vehicle detail — photo to be supplied",
@@ -222,6 +230,7 @@ function applyLanguage(language) {
     });
 
     applyPageTitle(language);
+    window.dispatchEvent(new CustomEvent("lv94:languagechange"));
 }
 
 function populateProjectData() {
@@ -332,6 +341,10 @@ function initSlider() {
     const dots = [...document.querySelectorAll("[data-slider-dot]")];
     const previousButton = slider.querySelector("[data-slider-prev]");
     const nextButton = slider.querySelector("[data-slider-next]");
+    const currentLabel = document.querySelector("[data-slider-current]");
+    const totalLabel = document.querySelector("[data-slider-total]");
+    const counter = document.querySelector("[data-slider-counter]");
+    const progress = document.querySelector("[data-slider-progress]");
 
     if (!viewport || !slides.length || !previousButton || !nextButton) return;
 
@@ -354,6 +367,18 @@ function initSlider() {
 
         previousButton.disabled = activeIndex === 0;
         nextButton.disabled = activeIndex === slides.length - 1;
+
+        if (currentLabel) currentLabel.textContent = String(activeIndex + 1).padStart(2, "0");
+        if (totalLabel) totalLabel.textContent = String(slides.length).padStart(2, "0");
+        if (counter) {
+            const label = currentLanguage === "cs"
+                ? `Fotografie ${activeIndex + 1} z ${slides.length}`
+                : `Photo ${activeIndex + 1} of ${slides.length}`;
+            counter.setAttribute("aria-label", label);
+        }
+        if (progress) {
+            progress.style.transform = `scaleX(${(activeIndex + 1) / slides.length})`;
+        }
     };
 
     const getTargetScroll = (index) => {
@@ -413,6 +438,7 @@ function initSlider() {
 
     viewport.addEventListener("pointerdown", (event) => {
         if (event.pointerType !== "mouse" || event.button !== 0) return;
+        if (event.target.closest("button")) return;
 
         pointerId = event.pointerId;
         pointerStartX = event.clientX;
@@ -438,9 +464,106 @@ function initSlider() {
     viewport.addEventListener("pointercancel", endDrag);
 
     window.addEventListener("resize", () => goToSlide(activeIndex, "auto"));
+    window.addEventListener("lv94:languagechange", () => updateActiveState(activeIndex));
 
     updateActiveState(0);
     window.requestAnimationFrame(() => goToSlide(0, "auto"));
+}
+
+function initGallery() {
+    const dialog = document.querySelector("[data-gallery-dialog]");
+    const slides = [...document.querySelectorAll("[data-slide]")];
+    if (!dialog || !slides.length) return;
+
+    const image = dialog.querySelector("[data-gallery-image]");
+    const caption = dialog.querySelector("[data-gallery-caption]");
+    const closeButton = dialog.querySelector("[data-gallery-close]");
+    const previousButton = dialog.querySelector("[data-gallery-prev]");
+    const nextButton = dialog.querySelector("[data-gallery-next]");
+    const openButtons = [...document.querySelectorAll("[data-gallery-open]")];
+    let activeIndex = 0;
+
+    const updateGallery = (index) => {
+        activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+        const slideImage = slides[activeIndex].querySelector("img");
+        const slideLabel = slides[activeIndex].querySelector("figcaption span");
+        const slideNote = slides[activeIndex].querySelector("figcaption small");
+
+        if (image && slideImage) {
+            image.src = slideImage.src;
+            image.alt = slideImage.alt;
+        }
+
+        if (caption) {
+            caption.textContent = [slideLabel?.textContent, slideNote?.textContent]
+                .filter(Boolean)
+                .join(" — ");
+        }
+
+        if (previousButton) previousButton.disabled = activeIndex === 0;
+        if (nextButton) nextButton.disabled = activeIndex === slides.length - 1;
+    };
+
+    const closeGallery = () => {
+        if (typeof dialog.close === "function") {
+            dialog.close();
+        } else {
+            dialog.removeAttribute("open");
+        }
+    };
+
+    openButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            updateGallery(Number(button.dataset.slideIndex || 0));
+            if (typeof dialog.showModal === "function") {
+                dialog.showModal();
+            } else {
+                dialog.setAttribute("open", "");
+            }
+            closeButton?.focus();
+        });
+    });
+
+    closeButton?.addEventListener("click", closeGallery);
+    previousButton?.addEventListener("click", () => updateGallery(activeIndex - 1));
+    nextButton?.addEventListener("click", () => updateGallery(activeIndex + 1));
+
+    dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) closeGallery();
+    });
+
+    dialog.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            updateGallery(activeIndex - 1);
+        }
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            updateGallery(activeIndex + 1);
+        }
+    });
+
+    window.addEventListener("lv94:languagechange", () => {
+        if (dialog.hasAttribute("open")) updateGallery(activeIndex);
+    });
+}
+
+function initHeaderState() {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    let scrollFrame = null;
+    const updateHeader = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 28);
+        scrollFrame = null;
+    };
+
+    window.addEventListener("scroll", () => {
+        if (scrollFrame) return;
+        scrollFrame = window.requestAnimationFrame(updateHeader);
+    }, { passive: true });
+
+    updateHeader();
 }
 
 function analyticsIsConfigured() {
@@ -565,5 +688,7 @@ initLanguageSwitcher();
 initLogoFallback();
 initReveals();
 initSlider();
+initGallery();
+initHeaderState();
 initCookieConsent();
 applyLanguage("cs");

@@ -557,3 +557,29 @@ Súbor `NEW_PROJECT_DOCKER_PROMPT.md` je iba lokálna pracovná poznámka a nie 
 10. Na konci stručne vypíš, ktoré placeholdery musí používateľ ešte doplniť.
 
 Nevytváraj ďalšie funkcie alebo obsah bez výslovnej požiadavky používateľa.
+
+## 17. Prémiové vizuálne doladenie
+
+Používateľ odsúhlasil experimentálne modernejšie spracovanie na samostatnej vetve:
+
+```text
+codex/premium-polish
+```
+
+Bezpečná pôvodná verzia je uložená na `main` v commite:
+
+```text
+f26c780
+```
+
+V prémiovej vetve sú zámerne použité tieto úpravy:
+
+- jemne sa zmenšujúca sklenená hlavička po odscrollovaní
+- decentné striedanie tmavých odtieňov medzi sekciami
+- galéria jedného veľkého záberu s číslovaním a progresovou linkou
+- možnosť otvoriť fotografie v celoobrazovkovej galérii
+- kompaktnejšie kontaktné tlačidlá; WhatsApp je tmavý so zeleným akcentom
+- horizontálny postup na desktope a vertikálna časová os na mobile
+- jemné mikroanimácie bez automatického prehrávania a bez rušivých efektov
+
+Tieto úpravy nemenia schválený obsah, poradie sekcií, firemné údaje ani placeholdery. Ak používateľ vizuálne úpravy neschváli, pokračuj z vetvy `main`.

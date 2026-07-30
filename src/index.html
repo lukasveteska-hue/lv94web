@@ -140,6 +140,11 @@
                     <div class="slider-track">
                         <figure class="vehicle-slide" data-slide>
                             <img src="assets/images/vehicles/exterior-placeholder.svg" alt="Exteriér vozidla — fotografie bude doplněna" loading="lazy" data-i18n-alt="exteriorAlt">
+                            <button class="gallery-open" type="button" data-gallery-open data-slide-index="0" data-i18n-aria="openPhoto" aria-label="Otevřít fotografii">
+                                <svg aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M9 4H4v5M15 4h5v5M20 15v5h-5M4 15v5h5"/>
+                                </svg>
+                            </button>
                             <figcaption>
                                 <span data-i18n="exteriorLabel">Exteriér</span>
                                 <small data-i18n="photoPending">Fotografie bude doplněna</small>
@@ -148,6 +153,11 @@
 
                         <figure class="vehicle-slide" data-slide>
                             <img src="assets/images/vehicles/interior-placeholder.svg" alt="Interiér vozidla — fotografie bude doplněna" loading="lazy" data-i18n-alt="interiorAlt">
+                            <button class="gallery-open" type="button" data-gallery-open data-slide-index="1" data-i18n-aria="openPhoto" aria-label="Otevřít fotografii">
+                                <svg aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M9 4H4v5M15 4h5v5M20 15v5h-5M4 15v5h5"/>
+                                </svg>
+                            </button>
                             <figcaption>
                                 <span data-i18n="interiorLabel">Interiér</span>
                                 <small data-i18n="photoPending">Fotografie bude doplněna</small>
@@ -156,6 +166,11 @@
 
                         <figure class="vehicle-slide" data-slide>
                             <img src="assets/images/vehicles/detail-placeholder.svg" alt="Detail vozidla — fotografie bude doplněna" loading="lazy" data-i18n-alt="detailAlt">
+                            <button class="gallery-open" type="button" data-gallery-open data-slide-index="2" data-i18n-aria="openPhoto" aria-label="Otevřít fotografii">
+                                <svg aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M9 4H4v5M15 4h5v5M20 15v5h-5M4 15v5h5"/>
+                                </svg>
+                            </button>
                             <figcaption>
                                 <span data-i18n="detailLabel">Detail</span>
                                 <small data-i18n="photoPending">Fotografie bude doplněna</small>
@@ -169,10 +184,16 @@
                 </button>
             </div>
 
-            <div class="slider-status site-shell" aria-hidden="true">
-                <span class="slider-dot is-active" data-slider-dot></span>
-                <span class="slider-dot" data-slider-dot></span>
-                <span class="slider-dot" data-slider-dot></span>
+            <div class="slider-controls site-shell">
+                <div class="slider-counter" data-slider-counter aria-live="polite" aria-atomic="true">
+                    <span data-slider-current>01</span>
+                    <span class="slider-counter-separator" aria-hidden="true">/</span>
+                    <span data-slider-total>03</span>
+                </div>
+                <span class="slider-progress" aria-hidden="true">
+                    <span data-slider-progress></span>
+                </span>
+                <span class="slider-hint" data-i18n="sliderHint">Posuňte galerii nebo použijte šipky</span>
             </div>
 
             <dl class="vehicle-specs site-shell" data-reveal="stagger">
@@ -207,6 +228,25 @@
                     <div><dt data-i18n="towBar">Tažné zařízení</dt><dd data-vehicle="towBar"></dd></div>
                 </div>
             </dl>
+
+            <dialog class="gallery-dialog" data-gallery-dialog aria-labelledby="gallery-dialog-title">
+                <div class="gallery-dialog-inner">
+                    <h2 class="sr-only" id="gallery-dialog-title" data-i18n="galleryTitle">Galerie vozidla</h2>
+                    <button class="gallery-dialog-close" type="button" data-gallery-close data-i18n-aria="closeGallery" aria-label="Zavřít galerii">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+                    </button>
+                    <button class="gallery-dialog-arrow gallery-dialog-arrow--prev" type="button" data-gallery-prev data-i18n-aria="previousPhoto" aria-label="Předchozí fotografie">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>
+                    </button>
+                    <figure>
+                        <img src="assets/images/vehicles/exterior-placeholder.svg" alt="" data-gallery-image>
+                        <figcaption data-gallery-caption></figcaption>
+                    </figure>
+                    <button class="gallery-dialog-arrow gallery-dialog-arrow--next" type="button" data-gallery-next data-i18n-aria="nextPhoto" aria-label="Další fotografie">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </dialog>
         </section>
 
         <section class="process section-space" aria-labelledby="process-title">
