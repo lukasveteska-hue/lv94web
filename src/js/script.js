@@ -4,6 +4,7 @@ const SITE_DATA = Object.freeze({
     contact: Object.freeze({
         phone: "[DOPLNIŤ TELEFÓN]",
         email: "[DOPLNIŤ E-MAIL]",
+        whatsapp: "[DOPLNIŤ WHATSAPP ČÍSLO]",
     }),
     domain: "[DOPLNIŤ DOMÉNU]",
     analyticsId: "[DOPLNIŤ GA ID]",
@@ -53,10 +54,16 @@ const TRANSLATIONS = Object.freeze({
         transmission: "Převodovka",
         towBar: "Tažné zařízení",
         processLabel: "Postup pronájmu",
+        processTitle: "Jednoduchý postup",
+        processIntro: "Od prvního kontaktu k převzetí vozidla ve třech krocích.",
         stepContact: "Kontakt",
+        stepContactDetail: "Telefon, WhatsApp nebo e-mail.",
         stepAgreement: "Dohoda podmínek",
+        stepAgreementDetail: "Vozidlo, termín a místo převzetí.",
         stepCollection: "Převzetí vozidla",
+        stepCollectionDetail: "Smlouva, předávací protokol — hotovo.",
         contactTitle: "Kontakt",
+        contactIntro: "Pro přesnou cenovou nabídku a domluvení individuálních požadavků nás kontaktujte.",
         privacyLink: "Ochrana osobních údajů",
         cookieSettings: "Nastavení cookies",
         cookieTitle: "Nastavení cookies",
@@ -101,10 +108,16 @@ const TRANSLATIONS = Object.freeze({
         transmission: "Transmission",
         towBar: "Tow bar",
         processLabel: "Rental process",
+        processTitle: "A simple process",
+        processIntro: "From first contact to vehicle collection in three simple steps.",
         stepContact: "Contact",
+        stepContactDetail: "Phone, WhatsApp or email.",
         stepAgreement: "Agreement of terms",
+        stepAgreementDetail: "Vehicle, date and collection location.",
         stepCollection: "Vehicle collection",
+        stepCollectionDetail: "Agreement, handover report — done.",
         contactTitle: "Contact",
+        contactIntro: "Contact us for an exact price quote and to discuss your individual requirements.",
         privacyLink: "Privacy Policy",
         cookieSettings: "Cookie Settings",
         cookieTitle: "Cookie Settings",
@@ -226,6 +239,26 @@ function populateProjectData() {
 
     document.querySelectorAll('[data-contact-link="email"]').forEach((element) => {
         element.setAttribute("href", `mailto:${SITE_DATA.contact.email}`);
+    });
+
+    const whatsappNumber = SITE_DATA.contact.whatsapp.replace(/\D/g, "");
+    const whatsappIsConfigured = (
+        whatsappNumber.length >= 8
+        && !SITE_DATA.contact.whatsapp.startsWith("[")
+    );
+
+    document.querySelectorAll('[data-contact-link="whatsapp"]').forEach((element) => {
+        if (whatsappIsConfigured) {
+            element.setAttribute("href", `https://wa.me/${whatsappNumber}`);
+            element.setAttribute("target", "_blank");
+            element.setAttribute("rel", "noopener noreferrer");
+            element.removeAttribute("aria-disabled");
+            return;
+        }
+
+        element.setAttribute("href", "#contact-title");
+        element.setAttribute("aria-disabled", "true");
+        element.addEventListener("click", (event) => event.preventDefault());
     });
 
     Object.entries(SITE_DATA.vehicle).forEach(([key, value]) => {

@@ -58,7 +58,7 @@
             <div class="site-shell service-layout">
                 <div class="service-copy" data-reveal="section">
                     <div class="service-heading">
-                        <h1 id="service-title" data-i18n="serviceTitle">Pronájem prémiových vozidel</h1>
+                        <h1 class="section-title" id="service-title" data-i18n="serviceTitle">Pronájem prémiových vozidel</h1>
                         <span class="heading-rule" aria-hidden="true"></span>
                     </div>
                     <p class="service-lead" data-i18n="serviceBody">Pronájem prémiových vozidel pro firmy i soukromé klienty. Předání a převzetí po celé České republice dle dohody, v rámci EU za individuální poplatek.</p>
@@ -126,7 +126,7 @@
         <section class="vehicle section-space" aria-labelledby="vehicle-title">
             <div class="site-shell">
                 <div class="section-heading" data-reveal="section">
-                    <h2 id="vehicle-title">Mercedes-Benz GLE 350 d 4MATIC</h2>
+                    <h2 class="section-title" id="vehicle-title">Mercedes-Benz GLE 350 d 4MATIC</h2>
                     <span class="heading-rule" aria-hidden="true"></span>
                 </div>
             </div>
@@ -209,20 +209,34 @@
             </dl>
         </section>
 
-        <section class="process section-space" aria-label="Postup pronájmu" data-i18n-aria="processLabel">
+        <section class="process section-space" aria-labelledby="process-title">
             <div class="site-shell">
+                <div class="process-heading" data-reveal="section">
+                    <h2 class="section-title" id="process-title" data-i18n="processTitle">Jednoduchý postup</h2>
+                    <span class="heading-rule heading-rule--centered" aria-hidden="true"></span>
+                    <p data-i18n="processIntro">Od prvního kontaktu k převzetí vozidla ve třech krocích.</p>
+                </div>
                 <ol class="process-list" data-reveal="stagger">
                     <li>
                         <span class="step-marker" aria-hidden="true"><span class="step-number">1</span><span class="step-dot"></span></span>
-                        <span data-i18n="stepContact">Kontakt</span>
+                        <span class="step-copy">
+                            <strong data-i18n="stepContact">Kontakt</strong>
+                            <small data-i18n="stepContactDetail">Telefon, WhatsApp nebo e-mail.</small>
+                        </span>
                     </li>
                     <li>
                         <span class="step-marker" aria-hidden="true"><span class="step-number">2</span><span class="step-dot"></span></span>
-                        <span data-i18n="stepAgreement">Dohoda podmínek</span>
+                        <span class="step-copy">
+                            <strong data-i18n="stepAgreement">Dohoda podmínek</strong>
+                            <small data-i18n="stepAgreementDetail">Vozidlo, termín a místo převzetí.</small>
+                        </span>
                     </li>
                     <li>
                         <span class="step-marker" aria-hidden="true"><span class="step-number">3</span><span class="step-dot"></span></span>
-                        <span data-i18n="stepCollection">Převzetí vozidla</span>
+                        <span class="step-copy">
+                            <strong data-i18n="stepCollection">Převzetí vozidla</strong>
+                            <small data-i18n="stepCollectionDetail">Smlouva, předávací protokol — hotovo.</small>
+                        </span>
                     </li>
                 </ol>
             </div>
@@ -230,14 +244,23 @@
 
         <section class="contact section-space" aria-labelledby="contact-title">
             <div class="site-shell contact-inner" data-reveal="section">
-                <h2 id="contact-title" data-i18n="contactTitle">Kontakt</h2>
+                <h2 class="section-title" id="contact-title" data-i18n="contactTitle">Kontakt</h2>
                 <span class="heading-rule heading-rule--centered" aria-hidden="true"></span>
+                <p class="contact-intro" data-i18n="contactIntro">
+                    Pro přesnou cenovou nabídku a domluvení individuálních požadavků nás kontaktujte.
+                </p>
                 <div class="contact-actions">
                     <a class="button button--primary" href="tel:[DOPLNIŤ TELEFÓN]" data-contact-link="phone">
                         <svg aria-hidden="true" viewBox="0 0 24 24">
                             <path d="M7.7 3.2 5.9 4.5c-.8.6-1.1 1.6-.8 2.5 1.7 5.4 6 9.7 11.4 11.4.9.3 1.9 0 2.5-.8l1.3-1.8c.5-.7.4-1.6-.2-2.2l-2.1-2a1.7 1.7 0 0 0-2.1-.2l-1.5 1a11.6 11.6 0 0 1-3.1-3.1l1-1.5c.4-.7.3-1.5-.2-2.1l-2-2.1c-.6-.6-1.6-.7-2.4-.4Z"/>
                         </svg>
                         <span data-contact-value="phone">[DOPLNIŤ TELEFÓN]</span>
+                    </a>
+                    <a class="button button--whatsapp" href="#contact-title" data-contact-link="whatsapp" aria-disabled="true">
+                        <svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26A9.9 9.9 0 0 1 12.05 2c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.23-6.16-3.48-8.41"/>
+                        </svg>
+                        <span>WhatsApp</span>
                     </a>
                     <a class="button button--secondary" href="mailto:[DOPLNIŤ E-MAIL]" data-contact-link="email">
                         <svg aria-hidden="true" viewBox="0 0 24 24">

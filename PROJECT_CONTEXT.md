@@ -195,15 +195,39 @@ Kým nebudú dodané fotografie, použi jasne pomenované lokálne placeholdery.
 
 ### 5.6 Postup prenájmu
 
-Zobraz iba tri stručné kroky bez vysvetľujúcich odsekov:
+Nad krokmi zobraz názov a krátky slogan:
+
+Česky:
+
+**Jednoduchý postup**
+
+`Od prvního kontaktu k převzetí vozidla ve třech krocích.`
+
+Anglicky:
+
+**A simple process**
+
+`From first contact to vehicle collection in three simple steps.`
+
+Samotný postup obsahuje iba tri stručné kroky bez vysvetľujúcich odsekov:
 
 Česky:
 
 **Kontakt → Dohoda podmínek → Převzetí vozidla**
 
+Krátke sivé upresnenia pod jednotlivými krokmi:
+
+1. `Telefon, WhatsApp nebo e-mail.`
+2. `Vozidlo, termín a místo převzetí.`
+3. `Smlouva, předávací protokol — hotovo.`
+
 Anglicky:
 
 **Contact → Agreement of terms → Vehicle collection**
+
+1. `Phone, WhatsApp or email.`
+2. `Vehicle, date and collection location.`
+3. `Agreement, handover report — done.`
 
 Vizuálne pravidlá:
 
@@ -217,15 +241,24 @@ Hlavné možnosti kontaktu:
 
 - telefón: `[DOPLNIŤ TELEFÓN]`
 - e-mail: `[DOPLNIŤ E-MAIL]`
+- WhatsApp: `[DOPLNIŤ WHATSAPP ČÍSLO]`
 
 Pravidlá:
 
 - telefón musí byť klikateľný cez `tel:`
 - e-mail musí byť klikateľný cez `mailto:`
 - nevytváraj kontaktný formulár
-- nepoužívaj WhatsApp nikde na webe
 - telefón je hlavné tlačidlo
 - e-mail je sekundárna akcia
+- WhatsApp je tretia kontaktná akcia so zeleným tlačidlom a logom WhatsApp
+- WhatsApp odkaz sa otvára v novej karte cez `wa.me`
+- poradie kontaktných tlačidiel je telefón, WhatsApp, e-mail
+- kontaktné tlačidlá sú kompaktné, majú jemne zaoblené rohy a decentné orámovanie
+
+Nad kontaktnými tlačidlami zobraz krátky text:
+
+- česky: `Pro přesnou cenovou nabídku a domluvení individuálních požadavků nás kontaktujte.`
+- anglicky: `Contact us for an exact price quote and to discuss your individual requirements.`
 
 V pätičke stručne uveď právny názov firmy, IČO, DIČ a sídlo. Kontaktná časť má byť čistá a bez marketingového textu.
 
@@ -280,6 +313,8 @@ Horizontálne linky pri hlavných nadpisoch majú používať rovnaký vizuálny
 Vyber moderné, čisté bezpätkové písmo. Nepoužívaj dekoratívne, retro ani výrazne „racing“ fonty. Typografia má podporovať luxusný minimalizmus a musí byť dobre čitateľná na mobile.
 
 Preferuj systémový font stack alebo jeden ľahký webfont. Nevkladaj veľké množstvo rezov písma.
+
+Všetky hlavné nadpisy sekcií používajú rovnakú veľkosť, váhu, riadkovanie a prirodzenú kapitalizáciu bez automatického prevodu na verzálky. Zarovnanie nadpisov sa riadi kompozíciou konkrétnej sekcie.
 
 ## 8. Animácie
 
@@ -443,7 +478,6 @@ Nevkladaj:
 
 - Mercedes-Benz E Cabriolet
 - športové vozidlá ako aktuálnu ponuku
-- WhatsApp
 - verejné ceny
 - online rezerváciu
 - blog
@@ -461,6 +495,7 @@ Tieto hodnoty musia zostať jasne označené ako placeholdery:
 
 - `[DOPLNIŤ TELEFÓN]`
 - `[DOPLNIŤ E-MAIL]`
+- `[DOPLNIŤ WHATSAPP ČÍSLO]`
 - `[DOPLNIŤ DOMÉNU]`
 - `[DOPLNIŤ GA ID]`
 - presné technické údaje GLE
@@ -491,6 +526,7 @@ Aktuálne implementované:
 - slider fotografií vozidla s lokálnymi placeholdermi
 - česká prevodovka `Automatická`
 - postup prenájmu s číslami `1`, `2`, `3`, červenými bodkami a správne umiestnenou čiarou
+- tretie zelené kontaktné tlačidlo WhatsApp s lokálnou SVG ikonou
 - cookie consent s blokovaním Google Analytics pred súhlasom
 - informačné stránky `privacy.html` a `cookies.html`
 - responzívna kontrola pri rozmeroch `1440 × 900` a `390 × 844`
