@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+    <title id="title">Vehicle detail photo placeholder</title>
+    <defs>
+        <radialGradient id="surface" cx="65%" cy="44%" r="70%">
+            <stop offset="0" stop-color="#242428"/>
+            <stop offset=".4" stop-color="#121214"/>
+            <stop offset="1" stop-color="#0a0a0b"/>
+        </radialGradient>
+        <radialGradient id="ring">
+            <stop offset=".64" stop-color="#0a0a0b"/>
+            <stop offset=".75" stop-color="#f3f3f1" stop-opacity=".36"/>
+            <stop offset=".79" stop-color="#151517"/>
+            <stop offset=".92" stop-color="#f3f3f1" stop-opacity=".08"/>
+            <stop offset="1" stop-color="#0a0a0b" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="14"/>
+        </filter>
+    </defs>
+    <rect width="1600" height="900" fill="url(#surface)"/>
+    <circle cx="790" cy="470" r="290" fill="url(#ring)"/>
+    <circle cx="790" cy="470" r="198" fill="none" stroke="#f3f3f1" stroke-opacity=".28" stroke-width="3" filter="url(#glow)"/>
+    <path d="m790 309 47 119 128 8-99 82 32 124-108-69-108 69 32-124-99-82 128-8Z" fill="none" stroke="#f3f3f1" stroke-opacity=".12" stroke-width="2"/>
+    <circle cx="1410" cy="145" r="3" fill="#ce0713"/>
+</svg>
