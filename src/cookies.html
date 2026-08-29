@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0A0A0B">
     <meta name="robots" content="noindex">
+    <meta name="description" content="Informace o používání cookies a Google Analytics na webu LV94.">
+    <link rel="canonical" href="https://lv94.cz/cookies.html">
     <title>LV94 | Nastavení cookies</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/style.css?v=20260829-nav-1">
+    <script src="js/script.js?v=20260829-nav-1" defer></script>
 </head>
 <body class="legal-page">
     <header class="site-header">
@@ -15,6 +20,10 @@
             <a class="brand brand--header" href="index.html" aria-label="LV94 CARS">
                 <img src="assets/images/lv94-logo.png" alt="" data-brand-logo>
             </a>
+            <nav class="primary-nav" data-i18n-aria="primaryNavLabel" aria-label="Hlavní navigace">
+                <a href="index.html#vozidlo" data-i18n="navRental">Pronájem</a>
+                <a href="dovoz-vozidel.html" data-i18n="navImport">Dovoz</a>
+            </nav>
             <div class="language-switcher" role="group" aria-label="Language" data-active-language="cs">
                 <button class="language-button is-active" type="button" data-language="cs" aria-pressed="true">CZ</button>
                 <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
@@ -25,7 +34,64 @@
         <div class="site-shell legal-content">
             <span class="accent-line" aria-hidden="true"></span>
             <h1 data-i18n="cookiesTitle">Informace o cookies</h1>
-            <p class="legal-placeholder" data-i18n="cookiesPlaceholder">[DOPLNIT FINÁLNÍ TEXT INFORMACÍ O COOKIES]</p>
+            <p class="legal-updated" data-i18n="legalUpdated">Poslední aktualizace: 29. srpna 2026</p>
+            <p class="legal-intro" data-i18n="cookiesIntro">Web používá technické úložiště pro zapamatování vaší volby a po vašem souhlasu analytické cookies Google Analytics 4.</p>
+
+            <div class="legal-document">
+                <section>
+                    <h2 data-i18n="cookiesNecessaryTitle">Technické úložiště</h2>
+                    <p data-i18n="cookiesNecessaryText">Hodnota lv94-analytics-consent v místním úložišti prohlížeče uchovává informaci, zda jste analytiku přijali nebo odmítli. Bez ní by se web nemohl spolehlivě řídit vaší volbou.</p>
+                </section>
+
+                <section>
+                    <h2 data-i18n="cookiesAnalyticsTitle">Analytické cookies</h2>
+                    <p data-i18n="cookiesAnalyticsText">Google Analytics se načte až po kliknutí na tlačítko Přijmout. Pomáhá nám porozumět souhrnné návštěvnosti a používání webu. Při odmítnutí se analytika nenačte.</p>
+
+                    <div class="legal-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col" data-i18n="cookiesTableType">Typ</th>
+                                    <th scope="col" data-i18n="cookiesTableName">Název</th>
+                                    <th scope="col" data-i18n="cookiesTablePurpose">Účel</th>
+                                    <th scope="col" data-i18n="cookiesTableDuration">Doba</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-i18n="cookiesLocalType">Místní úložiště</td>
+                                    <td><code>lv94-analytics-consent</code></td>
+                                    <td data-i18n="cookiesLocalPurpose">Zapamatování vaší volby analytiky</td>
+                                    <td data-i18n="cookiesLocalDuration">Do změny volby nebo vymazání dat webu</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="cookiesGaType">Cookie</td>
+                                    <td><code>_ga</code></td>
+                                    <td data-i18n="cookiesGaPurpose">Rozlišení návštěvníků a relací</td>
+                                    <td data-i18n="cookiesGaDuration">Až 2 roky od udělení souhlasu</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="cookiesGaType">Cookie</td>
+                                    <td><code>_ga_*</code></td>
+                                    <td data-i18n="cookiesGaStatePurpose">Uchování stavu relace Google Analytics</td>
+                                    <td data-i18n="cookiesGaDuration">Až 2 roky od udělení souhlasu</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 data-i18n="cookiesChoiceTitle">Jak změnit volbu</h2>
+                    <p data-i18n="cookiesChoiceText">Souhlas můžete kdykoli změnit pomocí odkazu Nastavení cookies v patičce. Cookies a místní úložiště můžete také odstranit v nastavení svého prohlížeče.</p>
+                </section>
+
+                <section>
+                    <h2 data-i18n="cookiesProviderTitle">Poskytovatel analytiky</h2>
+                    <p data-i18n="cookiesProviderText">Službu Google Analytics poskytuje Google Ireland Limited. Další informace o zpracování údajů najdete v zásadách ochrany soukromí společnosti Google.</p>
+                    <p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+                </section>
+            </div>
         </div>
     </main>
     <footer class="site-footer">
@@ -37,6 +103,7 @@
                 <span>Plzeňská 88, 353 01 Velká Hleďsebe, Česká republika</span>
             </div>
             <div class="footer-links">
+                <a href="dovoz-vozidel.html" data-i18n="importFooterLink">Dovoz vozidel</a>
                 <a href="privacy.html" data-i18n="privacyLink">Ochrana osobních údajů</a>
                 <button type="button" data-cookie-settings data-i18n="cookieSettings">Nastavení cookies</button>
             </div>
@@ -45,7 +112,7 @@
     <section class="cookie-panel" data-cookie-panel role="dialog" aria-labelledby="cookie-title" hidden>
         <div class="cookie-copy">
             <h2 class="sr-only" id="cookie-title" data-i18n="cookieTitle">Nastavení cookies</h2>
-            <p data-i18n="cookieText">Používáme nezbytné cookies a s vaším souhlasem analytické cookies Google Analytics.</p>
+            <p data-i18n="cookieText">Používáme technické úložiště pro zapamatování vaší volby a po souhlasu analytické cookies Google Analytics.</p>
         </div>
         <div class="cookie-actions">
             <button class="cookie-button cookie-button--accept" type="button" data-cookie-accept data-i18n="accept">Přijmout</button>

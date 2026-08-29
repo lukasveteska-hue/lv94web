@@ -91,6 +91,8 @@ Minimalistická hlavička bez klasického menu a bez hamburger menu.
 - logo sa v úvodnej sekcii nezobrazuje
 - ako plnošírkové pozadie sa používa lokálny obrázok detailu vozidla `src/assets/images/hero-car-detail.png`
 - obrázok má zostať dobre viditeľný; nepoužívaj naň príliš silné stmavenie alebo nízku opacity
+- spodná časť hero obrázka musí plynulo prechádzať gradientom do čierneho pozadia bez ostrej hrany
+- na širokých monitoroch sa hero obrázok stráca do čiernej aj na ľavom a pravom okraji, aby nebolo viditeľné jeho orezanie
 - samostatný obrázok napravo sa nepoužíva
 - hlavný nadpis je v množnom čísle: `Pronájem prémiových vozidel`
 - horizontálna linka pod nadpisom začína naľavo presne s ľavým okrajom nadpisu, rovnako ako linka pri nadpise Mercedes-Benz
@@ -175,7 +177,16 @@ Dočasné ilustračné údaje pre prvú verziu:
 - prevodovka: česky `Automatická`, anglicky `Automatic`
 - ťažné zariadenie: `Áno / Yes`
 
-Tieto údaje sú pracovné. Musia byť uložené na jednom prehľadnom mieste v kóde, aby sa dali jednoducho nahradiť. Nepridávaj ďalšie parametre, cenu, kauciu, kilometrový limit, rok výroby ani rozsiahly opis.
+Tieto technické údaje sú pracovné. Musia byť uložené na jednom prehľadnom mieste v kóde, aby sa dali jednoducho nahradiť. Nepridávaj ďalšie technické parametre, kilometrový limit, rok výroby ani rozsiahly opis.
+
+Pod parametrami vozidla je schválený jednoduchý cenník:
+
+- `1–2 dny`: `3 600 Kč / den`
+- `3–7 dní`: `3 300 Kč / den`
+- `8 a více dní`: `2 900 Kč / den`
+- vratná kaucia: `10 000 Kč`
+
+Spoločnosť aktuálne nie je platiteľom DPH. Verejná stránka preto uvádza ceny ako konečné a používa formuláciu `Nejsme plátci DPH.`
 
 ### 5.5 Fotografie vozidla
 
@@ -239,9 +250,9 @@ Vizuálne pravidlá:
 
 Hlavné možnosti kontaktu:
 
-- telefón: `[DOPLNIŤ TELEFÓN]`
-- e-mail: `[DOPLNIŤ E-MAIL]`
-- WhatsApp: `[DOPLNIŤ WHATSAPP ČÍSLO]`
+- telefón: `+420 773 018 685`
+- e-mail: `info@lv94.cz`
+- WhatsApp: `+420 773 018 685`
 
 Pravidlá:
 
@@ -264,9 +275,10 @@ V pätičke stručne uveď právny názov firmy, IČO, DIČ a sídlo. Kontaktná
 
 ## 6. Ceny a rezervácia
 
-- ceny sa na webe nezobrazujú
+- pri Mercedes-Benz GLE sa zobrazuje schválený cenník podľa dĺžky prenájmu a vratná kaucia
+- ceny sú konečné; spoločnosť aktuálne nie je platiteľom DPH
 - nevytváraj online rezervačný systém
-- dostupnosť, cena a podmienky sa dohodnú individuálne telefonicky alebo e-mailom
+- dostupnosť, konečná cena, miesto pristavenia a podmienky sa potvrdia individuálne telefonicky alebo e-mailom
 - nepoužívaj tlačidlá „Rezervovať online“ alebo kalendár dostupnosti
 
 ## 7. Vizuálny smer
@@ -409,7 +421,7 @@ Požiadavky:
 
 Web bude používať:
 
-- nevyhnutné cookies
+- technické miestne úložisko na zapamätanie voľby súhlasu
 - analytické cookies Google Analytics
 
 Dočasný identifikátor:
@@ -432,16 +444,14 @@ V pätičke vytvor odkazy:
 - `Ochrana osobních údajů / Privacy Policy`
 - `Nastavení cookies / Cookie Settings`
 
-Právne texty môžu byť v prvej verzii jasne označené ako obsah na doplnenie. Nevymýšľaj právne vyhlásenia, ktoré neboli dodané.
+Na stránkach ochrany osobných údajov a cookies je schválená stručná pracovná verzia textov v češtine a angličtine. Pred verejným spustením je vhodná právna kontrola.
 
 ## 12. SEO
 
-Doména zatiaľ nie je finálne potvrdená.
-
-Použi placeholder:
+Finálna doména je:
 
 ```text
-[DOPLNIŤ DOMÉNU]
+https://lv94.cz
 ```
 
 Pracovný názov stránky:
@@ -491,16 +501,11 @@ Nevkladaj:
 
 ## 14. Otvorené údaje pred zverejnením
 
-Tieto hodnoty musia zostať jasne označené ako placeholdery:
+Pred zverejnením zostáva doplniť alebo potvrdiť:
 
-- `[DOPLNIŤ TELEFÓN]`
-- `[DOPLNIŤ E-MAIL]`
-- `[DOPLNIŤ WHATSAPP ČÍSLO]`
-- `[DOPLNIŤ DOMÉNU]`
 - `[DOPLNIŤ GA ID]`
-- presné technické údaje GLE
-- finálne fotografie GLE
-- finálne texty ochrany osobných údajov a cookies
+- finálne podmienky prenájmu
+- právnu kontrolu stručných textov ochrany osobných údajov a cookies
 
 Web môže byť kompletne funkčný aj s placeholdermi, ale nesmie sa považovať za pripravený na verejné zverejnenie, kým nebudú doplnené.
 
@@ -523,7 +528,7 @@ Aktuálne implementované:
 - množné číslo `Pronájem prémiových vozidel` / `Premium vehicle rentals`
 - linka pod hlavným nadpisom zarovnaná naľavo s nadpisom
 - blok „Pro koho je služba vhodná“ so šiestimi ikonami
-- slider fotografií vozidla s lokálnymi placeholdermi
+- slider s lokálnou generovanou sériou čierneho GLE W166 AMG Line: exteriér, interiér a detail
 - česká prevodovka `Automatická`
 - postup prenájmu s číslami `1`, `2`, `3`, červenými bodkami a správne umiestnenou čiarou
 - tretie zelené kontaktné tlačidlo WhatsApp s lokálnou SVG ikonou
@@ -583,3 +588,48 @@ V prémiovej vetve sú zámerne použité tieto úpravy:
 - jemné mikroanimácie bez automatického prehrávania a bez rušivých efektov
 
 Tieto úpravy nemenia schválený obsah, poradie sekcií, firemné údaje ani placeholdery. Ak používateľ vizuálne úpravy neschváli, pokračuj z vetvy `main`.
+
+## 18. Aktuálne obrazové podklady
+
+Používateľ odsúhlasil použitie generovaných automobilových vizuálov priamo na webe. Aktuálne sú v projekte:
+
+```text
+src/assets/images/hero-g-class-black-amg-multispoke-v4.webp
+src/assets/images/og-lv94-premiovy-pronajem.jpg
+src/assets/images/apple-touch-icon.png
+src/assets/images/favicon-32x32.png
+src/assets/images/vehicles/gle-w166-exterior-modern-hq.webp
+src/assets/images/vehicles/gle-w166-interior-black-amg.webp
+src/assets/images/vehicles/gle-w166-detail-black-amg.webp
+```
+
+Hero zobrazuje čierny Mercedes-Benz G-Class v tmavom štúdiovom detaile s veľkými konkávnymi 22-palcovými AMG multispoke diskami, ktoré sú v spodnej časti záberu prirodzene čiastočne odrezané. Prvá fotografia GLE zobrazuje vozidlo pred minimalistickou modernou budovou pri súmraku; ostatné zábery pokračujú interiérom a detailom. Galéria používa konzistentnú sériu čierneho faceliftového Mercedes-Benz GLE generácie W166 s vizuálnym paketom AMG Line. Pre zdieľanie sa používa samostatný obrázok 1200 × 630 s logom, GLE a textom `Prémiový pronájem vozidel`; značka má pripravenú aj favicon a Apple Touch ikonu.
+
+## 19. Dovoz a prověření vozidla
+
+Na výslovnú požiadavku používateľa vznikla samostatná podstránka:
+
+```text
+src/dovoz-vozidel.html
+```
+
+Podstránka je druhým pilierom ponuky LV94 a vizuálne nadväzuje na hlavnú stránku. Obsahuje:
+
+- predkúpnu obhliadku s meraním laku, diagnostikou, vizuálnou kontrolou a fotodokumentáciou za `5 000 Kč`
+- komunikáciu s predávajúcim, dohodnutie obhliadky a dovoz vozidla s formuláciou `Doprava vozidla až k vám`
+- registráciu vozidla na kľúč za `5 000 Kč`
+- šesťkrokový postup od zaslania inzerátu po registráciu
+- informáciu, že správne poplatky, STK, emisie, poistenie a ďalšie súvisiace náklady nie sú zahrnuté v cene služby
+- upozornenie, že predkúpna obhliadka je orientačné praktické preverenie a nenahrádza detailnú kontrolu v autorizovanom alebo špecializovanom servise
+- českú a anglickú jazykovú verziu a rovnaké kontaktné možnosti ako hlavná stránka
+
+Hlavička všetkých stránok obsahuje dve stručné položky `Pronájem` a `Dovoz`. Na hlavnej stránke odkaz `Pronájem` plynulo posunie návštevníka k sekcii Mercedes-Benz GLE s identifikátorom `#vozidlo`; z ostatných stránok smeruje na `index.html#vozidlo`. Odkaz `Dovoz` otvára `dovoz-vozidel.html`.
+
+Používateľ výslovne nechce verejne komunikovať spôsob zabezpečenia prepravy ani uvádzať externého prepravcu. Používaj jednoduchú formuláciu, že LV94 zabezpečí dopravu vozidla až ku klientovi.
+
+Podstránka používa obrazové podklady:
+
+```text
+src/assets/images/vehicle-inspection-hero-v1.webp
+src/assets/images/og-lv94-dovoz-vozidel.jpg
+```

@@ -2,11 +2,11 @@
 
 const SITE_DATA = Object.freeze({
     contact: Object.freeze({
-        phone: "[DOPLNIŤ TELEFÓN]",
-        email: "[DOPLNIŤ E-MAIL]",
-        whatsapp: "[DOPLNIŤ WHATSAPP ČÍSLO]",
+        phone: "+420 773 018 685",
+        email: "info@lv94.cz",
+        whatsapp: "+420 773 018 685",
     }),
-    domain: "[DOPLNIŤ DOMÉNU]",
+    domain: "https://lv94.cz",
     analyticsId: "[DOPLNIŤ GA ID]",
     vehicle: Object.freeze({
         engine: "3.0 V6 diesel",
@@ -21,6 +21,12 @@ const SITE_DATA = Object.freeze({
             en: "Yes",
         }),
     }),
+    pricing: Object.freeze({
+        shortTerm: "3 600 Kč",
+        mediumTerm: "3 300 Kč",
+        longTerm: "2 900 Kč",
+        deposit: "10 000 Kč",
+    }),
 });
 
 const TRANSLATIONS = Object.freeze({
@@ -29,8 +35,73 @@ const TRANSLATIONS = Object.freeze({
         metaDescription: "Pronájem prémiových vozidel Mercedes-Benz GLE pro firmy i soukromé klienty. Předání po celé České republice a dle dohody v rámci EU.",
         skipLink: "Přejít k obsahu",
         call: "Volat",
+        primaryNavLabel: "Hlavní navigace",
+        navRental: "Pronájem",
+        navImport: "Dovoz",
         serviceTitle: "Pronájem prémiových vozidel",
         serviceBody: "Pronájem prémiových vozidel pro firmy i soukromé klienty. Předání a převzetí po celé České republice dle dohody, v rámci EU za individuální poplatek.",
+        importBridgeTitle: "Dovoz a prověření vozidla",
+        importBridgeText: "Pomůžeme vám s předkupní prohlídkou, měřením laku, diagnostikou, dopravou i registrací vozidla v České republice.",
+        importBridgeButton: "Zjistit více",
+        importFooterLink: "Dovoz vozidel",
+        rentalFooterLink: "Pronájem vozidel",
+        importPageTitle: "LV94 | Dovoz a prověření vozidla",
+        importMetaDescription: "Předkupní prohlídka, měření laku, diagnostika, dovoz a registrace vozidla na klíč. Od prověření vozu až po české značky.",
+        importHeroTitle: "Od inzerátu až po české značky",
+        importHeroLead: "Prověříme vybrané vozidlo, změříme lak, načteme diagnostiku a připravíme přehledný výstup. Pokud se rozhodnete ke koupi, zajistíme dopravu až k vám a registraci vozidla v České republice.",
+        importSendListing: "Poslat odkaz na vozidlo",
+        importCallUs: "Zavolat",
+        importServicesTitle: "Kompletní služba podle vašich potřeb",
+        importServicesIntro: "Vyberte si samostatnou předkupní prohlídku, registraci vozidla nebo kompletní cestu od prověření až po předání.",
+        importInspectionTitle: "Předkupní prohlídka",
+        importInspectionPaint: "Měření tloušťky laku",
+        importInspectionDiagnostics: "Diagnostika a chybové kódy",
+        importInspectionVisual: "Vizuální kontrola vozidla",
+        importInspectionDocuments: "Kontrola dokladů a identifikačních údajů",
+        importInspectionReport: "Fotodokumentace a přehledný výstup",
+        importTransportTitle: "Dovoz vozidla",
+        importIndividualPrice: "Individuální cena",
+        importTransportSeller: "Komunikace s prodávajícím",
+        importTransportInfo: "Ověření základních informací",
+        importTransportInspection: "Domluvení prohlídky",
+        importTransportDelivery: "Doprava vozidla až k vám",
+        importTransportCzechia: "Navazující kroky po příjezdu do ČR",
+        importRegistrationTitle: "Registrace vozidla na klíč",
+        importRegistrationDocuments: "Příprava potřebných podkladů",
+        importRegistrationChecks: "Zajištění potřebných kontrol",
+        importRegistrationAuthority: "Vyřízení registrace na základě plné moci",
+        importRegistrationPlates: "Předání dokladů a registračních značek",
+        inspectionDetailTitle: "Prověříme to podstatné",
+        inspectionDetailLead: "Výsledkem není jen rychlý pohled na vůz. Dostanete konkrétní informace, které vám pomohou rozhodnout se před koupí.",
+        inspectionPointPaintTitle: "Karoserie a lak",
+        inspectionPointPaintText: "Digitální měření odhalí přelakované, opravované nebo tmelené díly.",
+        inspectionPointDiagTitle: "Diagnostika",
+        inspectionPointDiagText: "Načteme řídicí jednotky a zaznamenáme nalezené chybové kódy.",
+        inspectionPointConditionTitle: "Stav vozidla",
+        inspectionPointConditionText: "Zkontrolujeme interiér, pneumatiky, kapaliny, identifikační údaje a dostupné doklady.",
+        inspectionPointOutputTitle: "Přehledný výstup",
+        inspectionPointOutputText: "Obdržíte stručné shrnutí zjištění doplněné fotodokumentací.",
+        importProcessTitle: "Jednoduchý postup",
+        importProcessLead: "Od prvního kontaktu až po předání vozidla.",
+        importStep1Title: "Pošlete odkaz nebo požadavky",
+        importStep1Text: "Konkrétní inzerát, rozpočet nebo představu o vozidle.",
+        importStep2Title: "Dohodneme rozsah služby",
+        importStep2Text: "Samostatná prohlídka nebo kompletní zajištění.",
+        importStep3Title: "Prověříme vozidlo",
+        importStep3Text: "Lak, diagnostika, stav vozidla, doklady a fotografie.",
+        importStep4Title: "Obdržíte výstup",
+        importStep4Text: "Na základě zjištění se rozhodnete, zda vozidlo koupíte.",
+        importStep5Title: "Zajistíme dopravu",
+        importStep5Text: "Zakoupené vozidlo dopravíme až k vám.",
+        importStep6Title: "Vyřídíme registraci",
+        importStep6Text: "Připravíme podklady a dokončíme registraci v České republice.",
+        importTermsTitle: "Jasné podmínky předem",
+        importRegistrationCzechTitle: "Registrace vozidla v ČR",
+        importByAgreement: "Dle dohody",
+        importVatNote: "Uvedené ceny jsou konečné. Nejsme plátci DPH.",
+        importTermsThirdParty: "Správní poplatky, STK, emise, pojištění a další související náklady nejsou zahrnuty v ceně služby a hradí se podle skutečnosti.",
+        importTermsInspection: "Předkupní prohlídka je praktické orientační prověření vozidla a nenahrazuje detailní kontrolu v autorizovaném nebo specializovaném servisu.",
+        importContactIntro: "Pošlete nám odkaz na vozidlo nebo svou představu. Ozveme se vám a domluvíme další postup.",
         serviceUseCasesTitle: "Pro koho je služba vhodná",
         serviceUseCaseTrailers: "Tažení různých přívěsů",
         serviceUseCaseCarTransport: "Přeprava automobilů pomocí autopřepravníku",
@@ -45,18 +116,27 @@ const TRANSLATIONS = Object.freeze({
         openPhoto: "Otevřít fotografii",
         closeGallery: "Zavřít galerii",
         galleryTitle: "Galerie vozidla",
-        exteriorAlt: "Exteriér vozidla — fotografie bude doplněna",
-        interiorAlt: "Interiér vozidla — fotografie bude doplněna",
-        detailAlt: "Detail vozidla — fotografie bude doplněna",
+        exteriorAlt: "Černý Mercedes-Benz GLE W166 s paketem AMG Line před moderní budovou",
+        interiorAlt: "Černý interiér Mercedes-Benz GLE W166 s paketem AMG Line",
+        detailAlt: "Detail přední části černého Mercedes-Benz GLE W166 AMG Line",
         exteriorLabel: "Exteriér",
         interiorLabel: "Interiér",
         detailLabel: "Detail",
-        photoPending: "Fotografie bude doplněna",
+        photoSeries: "W166 · AMG Line",
         engine: "Motor",
         power: "Výkon",
         drive: "Pohon",
         transmission: "Převodovka",
         towBar: "Tažné zařízení",
+        pricingKicker: "Mercedes-Benz GLE",
+        pricingTitle: "Ceník pronájmu",
+        pricingShortTerm: "1–2 dny",
+        pricingMediumTerm: "3–7 dní",
+        pricingLongTerm: "8 a více dní",
+        perDay: "/ den",
+        pricingVatNote: "Uvedené ceny jsou konečné. Nejsme plátci DPH.",
+        pricingDepositLabel: "Vratná kauce",
+        pricingDeliveryNote: "Individuální přistavení vozidla se účtuje podle místa předání. Konečnou cenu a dostupnost vždy potvrdíme předem.",
         processLabel: "Postup pronájmu",
         processTitle: "Jednoduchý postup",
         processIntro: "Od prvního kontaktu k převzetí vozidla ve třech krocích.",
@@ -71,14 +151,55 @@ const TRANSLATIONS = Object.freeze({
         privacyLink: "Ochrana osobních údajů",
         cookieSettings: "Nastavení cookies",
         cookieTitle: "Nastavení cookies",
-        cookieText: "Používáme nezbytné cookies a s vaším souhlasem analytické cookies Google Analytics.",
+        cookieText: "Používáme technické úložiště pro zapamatování vaší volby a po souhlasu analytické cookies Google Analytics.",
         accept: "Přijmout",
         reject: "Odmítnout",
         moreInfo: "Více informací",
         privacyTitle: "Ochrana osobních údajů",
-        privacyPlaceholder: "[DOPLNIT FINÁLNÍ TEXT OCHRANY OSOBNÍCH ÚDAJŮ]",
+        legalUpdated: "Poslední aktualizace: 29. srpna 2026",
+        privacyIntro: "Níže najdete stručné informace o tom, jak LV94 s. r. o. zpracovává osobní údaje návštěvníků webu a zájemců o naše služby.",
+        privacyControllerTitle: "Správce osobních údajů",
+        privacyControllerText: "Správcem osobních údajů je LV94 s. r. o., IČO 23855711, se sídlem Plzeňská 88, 353 01 Velká Hleďsebe, Česká republika. Kontakt pro otázky k ochraně osobních údajů: info@lv94.cz.",
+        privacyDataTitle: "Jaké údaje zpracováváme a proč",
+        privacyDataText: "Pokud nás kontaktujete telefonicky, e-mailem nebo přes WhatsApp, zpracováváme údaje, které nám sdělíte, zejména vaše jméno, kontaktní údaje, obsah komunikace a informace potřebné pro přípravu nabídky a poskytnutí objednané služby.",
+        privacyAnalyticsText: "Po udělení souhlasu používáme Google Analytics 4 k získání souhrnných informací o návštěvnosti webu, například o navštívených stránkách, zařízení, prohlížeči a přibližné oblasti návštěvy.",
+        privacyBasisTitle: "Právní základ",
+        privacyBasisText: "Údaje z komunikace zpracováváme pro jednání o smlouvě, její plnění a splnění zákonných povinností. Analytické údaje zpracováváme pouze na základě vašeho souhlasu, který můžete kdykoli odvolat v nastavení cookies.",
+        privacyRecipientsTitle: "Kdo může mít k údajům přístup",
+        privacyRecipientsText: "V nezbytném rozsahu mohou údaje zpracovávat poskytovatelé hostingu, e-mailových a komunikačních služeb a po vašem souhlasu společnost Google jako poskytovatel Google Analytics. Při použití WhatsAppu se uplatní také pravidla služby WhatsApp společnosti Meta.",
+        privacyRetentionTitle: "Doba uchování",
+        privacyRetentionText: "Údaje uchováváme jen po dobu potřebnou k vyřízení vašeho požadavku, přípravě a plnění smlouvy a následně po dobu vyžadovanou právními předpisy. Analytická data se uchovávají podle nastavení Google Analytics; odvoláním souhlasu se zastaví další měření.",
+        privacyRightsTitle: "Vaše práva",
+        privacyRightsIntro: "Podle okolností máte zejména právo:",
+        privacyRightAccess: "na přístup k osobním údajům a jejich opravu,",
+        privacyRightDelete: "na výmaz nebo omezení zpracování,",
+        privacyRightObject: "vznést námitku proti zpracování,",
+        privacyRightPortability: "na přenositelnost údajů, pokud jsou splněny zákonné podmínky,",
+        privacyRightConsent: "kdykoli odvolat souhlas s analytickými cookies,",
+        privacyRightComplaint: "podat stížnost u dozorového úřadu.",
+        privacyContactTitle: "Kontakt a dozorový úřad",
+        privacyContactText: "Svá práva můžete uplatnit na adrese info@lv94.cz. Dozorovým úřadem je Úřad pro ochranu osobních údajů.",
         cookiesTitle: "Informace o cookies",
-        cookiesPlaceholder: "[DOPLNIT FINÁLNÍ TEXT INFORMACÍ O COOKIES]",
+        cookiesIntro: "Web používá technické úložiště pro zapamatování vaší volby a po vašem souhlasu analytické cookies Google Analytics 4.",
+        cookiesNecessaryTitle: "Technické úložiště",
+        cookiesNecessaryText: "Hodnota lv94-analytics-consent v místním úložišti prohlížeče uchovává informaci, zda jste analytiku přijali nebo odmítli. Bez ní by se web nemohl spolehlivě řídit vaší volbou.",
+        cookiesAnalyticsTitle: "Analytické cookies",
+        cookiesAnalyticsText: "Google Analytics se načte až po kliknutí na tlačítko Přijmout. Pomáhá nám porozumět souhrnné návštěvnosti a používání webu. Při odmítnutí se analytika nenačte.",
+        cookiesTableType: "Typ",
+        cookiesTableName: "Název",
+        cookiesTablePurpose: "Účel",
+        cookiesTableDuration: "Doba",
+        cookiesLocalType: "Místní úložiště",
+        cookiesLocalPurpose: "Zapamatování vaší volby analytiky",
+        cookiesLocalDuration: "Do změny volby nebo vymazání dat webu",
+        cookiesGaType: "Cookie",
+        cookiesGaPurpose: "Rozlišení návštěvníků a relací",
+        cookiesGaStatePurpose: "Uchování stavu relace Google Analytics",
+        cookiesGaDuration: "Až 2 roky od udělení souhlasu",
+        cookiesChoiceTitle: "Jak změnit volbu",
+        cookiesChoiceText: "Souhlas můžete kdykoli změnit pomocí odkazu Nastavení cookies v patičce. Cookies a místní úložiště můžete také odstranit v nastavení svého prohlížeče.",
+        cookiesProviderTitle: "Poskytovatel analytiky",
+        cookiesProviderText: "Službu Google Analytics poskytuje Google Ireland Limited. Další informace o zpracování údajů najdete v zásadách ochrany soukromí společnosti Google.",
         privacyPageTitle: "LV94 | Ochrana osobních údajů",
         cookiesPageTitle: "LV94 | Informace o cookies",
     }),
@@ -87,8 +208,73 @@ const TRANSLATIONS = Object.freeze({
         metaDescription: "Premium Mercedes-Benz GLE vehicle rentals for business and private clients, with delivery across the Czech Republic and by arrangement throughout the EU.",
         skipLink: "Skip to content",
         call: "Call",
+        primaryNavLabel: "Main navigation",
+        navRental: "Rental",
+        navImport: "Import",
         serviceTitle: "Premium vehicle rentals",
         serviceBody: "Premium vehicle rentals for business and private clients. Vehicle delivery and collection are available throughout the Czech Republic by arrangement and across the EU for an individual fee.",
+        importBridgeTitle: "Vehicle import and inspection",
+        importBridgeText: "We can help with a pre-purchase inspection, paint measurement, diagnostics, transport and vehicle registration in the Czech Republic.",
+        importBridgeButton: "Find out more",
+        importFooterLink: "Vehicle import",
+        rentalFooterLink: "Vehicle rentals",
+        importPageTitle: "LV94 | Vehicle import and inspection",
+        importMetaDescription: "Pre-purchase vehicle inspection, paint measurement, diagnostics, transport and turnkey registration in the Czech Republic.",
+        importHeroTitle: "From the listing to Czech licence plates",
+        importHeroLead: "We inspect the selected vehicle, measure the paint, run diagnostics and prepare a clear report. If you decide to buy, we arrange transport directly to you and registration of the vehicle in the Czech Republic.",
+        importSendListing: "Send us the vehicle listing",
+        importCallUs: "Call us",
+        importServicesTitle: "A complete service tailored to you",
+        importServicesIntro: "Choose a standalone pre-purchase inspection, vehicle registration or the complete journey from inspection to handover.",
+        importInspectionTitle: "Pre-purchase inspection",
+        importInspectionPaint: "Paint thickness measurement",
+        importInspectionDiagnostics: "Diagnostics and fault codes",
+        importInspectionVisual: "Visual vehicle inspection",
+        importInspectionDocuments: "Document and identification check",
+        importInspectionReport: "Photo documentation and a clear report",
+        importTransportTitle: "Vehicle import",
+        importIndividualPrice: "Individual quote",
+        importTransportSeller: "Communication with the seller",
+        importTransportInfo: "Verification of basic information",
+        importTransportInspection: "Arranging the inspection",
+        importTransportDelivery: "Vehicle transport directly to you",
+        importTransportCzechia: "Follow-up steps after arrival in the Czech Republic",
+        importRegistrationTitle: "Turnkey vehicle registration",
+        importRegistrationDocuments: "Preparation of the required documents",
+        importRegistrationChecks: "Arranging the required inspections",
+        importRegistrationAuthority: "Registration under power of attorney",
+        importRegistrationPlates: "Handover of documents and licence plates",
+        inspectionDetailTitle: "We check what matters",
+        inspectionDetailLead: "The result is more than a quick look at the vehicle. You receive specific information to help you make an informed decision before buying.",
+        inspectionPointPaintTitle: "Bodywork and paint",
+        inspectionPointPaintText: "Digital measurement helps identify repainted, repaired or filled body panels.",
+        inspectionPointDiagTitle: "Diagnostics",
+        inspectionPointDiagText: "We scan the control units and record any fault codes found.",
+        inspectionPointConditionTitle: "Vehicle condition",
+        inspectionPointConditionText: "We check the interior, tyres, fluids, identification details and available documents.",
+        inspectionPointOutputTitle: "Clear report",
+        inspectionPointOutputText: "You receive a concise summary of the findings with photo documentation.",
+        importProcessTitle: "A simple process",
+        importProcessLead: "From the first contact to vehicle handover.",
+        importStep1Title: "Send us a link or your requirements",
+        importStep1Text: "A specific listing, your budget or the type of vehicle you are looking for.",
+        importStep2Title: "We agree the scope",
+        importStep2Text: "A standalone inspection or complete support.",
+        importStep3Title: "We inspect the vehicle",
+        importStep3Text: "Paint, diagnostics, vehicle condition, documents and photographs.",
+        importStep4Title: "You receive the report",
+        importStep4Text: "You decide whether to buy based on the findings.",
+        importStep5Title: "We arrange transport",
+        importStep5Text: "We deliver the purchased vehicle directly to you.",
+        importStep6Title: "We complete registration",
+        importStep6Text: "We prepare the documents and complete registration in the Czech Republic.",
+        importTermsTitle: "Clear terms from the start",
+        importRegistrationCzechTitle: "Vehicle registration in the Czech Republic",
+        importByAgreement: "By agreement",
+        importVatNote: "The prices shown are final. We are not VAT registered.",
+        importTermsThirdParty: "Administrative fees, technical and emissions inspections, insurance and other related costs are not included in the service fee and are paid at actual cost.",
+        importTermsInspection: "The pre-purchase inspection is a practical indicative vehicle check and does not replace a detailed inspection by an authorised or specialist service centre.",
+        importContactIntro: "Send us the vehicle listing or tell us what you are looking for. We will contact you to agree the next steps.",
         serviceUseCasesTitle: "Who the service is suitable for",
         serviceUseCaseTrailers: "Towing different types of trailers",
         serviceUseCaseCarTransport: "Transporting cars with a car transporter",
@@ -103,18 +289,27 @@ const TRANSLATIONS = Object.freeze({
         openPhoto: "Open photo",
         closeGallery: "Close gallery",
         galleryTitle: "Vehicle gallery",
-        exteriorAlt: "Vehicle exterior — photo to be supplied",
-        interiorAlt: "Vehicle interior — photo to be supplied",
-        detailAlt: "Vehicle detail — photo to be supplied",
+        exteriorAlt: "Black Mercedes-Benz GLE W166 with AMG Line package in front of a modern building",
+        interiorAlt: "Black Mercedes-Benz GLE W166 interior with AMG Line package",
+        detailAlt: "Front detail of a black Mercedes-Benz GLE W166 AMG Line",
         exteriorLabel: "Exterior",
         interiorLabel: "Interior",
         detailLabel: "Detail",
-        photoPending: "Photo to be supplied",
+        photoSeries: "W166 · AMG Line",
         engine: "Engine",
         power: "Power",
         drive: "Drive",
         transmission: "Transmission",
         towBar: "Tow bar",
+        pricingKicker: "Mercedes-Benz GLE",
+        pricingTitle: "Rental pricing",
+        pricingShortTerm: "1–2 days",
+        pricingMediumTerm: "3–7 days",
+        pricingLongTerm: "8 days or more",
+        perDay: "/ day",
+        pricingVatNote: "The prices shown are final. We are not VAT registered.",
+        pricingDepositLabel: "Refundable deposit",
+        pricingDeliveryNote: "Individual vehicle delivery is priced according to the handover location. We always confirm the final price and availability in advance.",
         processLabel: "Rental process",
         processTitle: "A simple process",
         processIntro: "From first contact to vehicle collection in three simple steps.",
@@ -129,14 +324,55 @@ const TRANSLATIONS = Object.freeze({
         privacyLink: "Privacy Policy",
         cookieSettings: "Cookie Settings",
         cookieTitle: "Cookie Settings",
-        cookieText: "We use necessary cookies and, with your consent, Google Analytics cookies.",
+        cookieText: "We use technical storage to remember your choice and, with your consent, Google Analytics cookies.",
         accept: "Accept",
         reject: "Reject",
         moreInfo: "More information",
         privacyTitle: "Privacy Policy",
-        privacyPlaceholder: "[ADD FINAL PRIVACY POLICY TEXT]",
+        legalUpdated: "Last updated: 29 August 2026",
+        privacyIntro: "Below is a concise explanation of how LV94 s. r. o. processes personal data relating to website visitors and people interested in our services.",
+        privacyControllerTitle: "Data controller",
+        privacyControllerText: "The data controller is LV94 s. r. o., company ID 23855711, registered at Plzeňská 88, 353 01 Velká Hleďsebe, Czech Republic. Privacy contact: info@lv94.cz.",
+        privacyDataTitle: "What data we process and why",
+        privacyDataText: "If you contact us by phone, email or WhatsApp, we process the information you provide, in particular your name, contact details, communication content and the information required to prepare an offer and provide the ordered service.",
+        privacyAnalyticsText: "After you give consent, we use Google Analytics 4 to obtain aggregated information about website traffic, such as pages visited, device, browser and approximate visit area.",
+        privacyBasisTitle: "Legal basis",
+        privacyBasisText: "We process communication data to take steps before entering into a contract, perform the contract and comply with legal obligations. We process analytics data only with your consent, which you can withdraw at any time in Cookie Settings.",
+        privacyRecipientsTitle: "Who may access the data",
+        privacyRecipientsText: "Where necessary, data may be processed by our hosting, email and communication service providers and, after your consent, by Google as the provider of Google Analytics. If you use WhatsApp, the privacy rules of Meta's WhatsApp service also apply.",
+        privacyRetentionTitle: "Retention",
+        privacyRetentionText: "We keep data only for as long as necessary to handle your request, prepare and perform a contract and subsequently for the period required by applicable law. Analytics data is retained according to Google Analytics settings; withdrawing consent stops further measurement.",
+        privacyRightsTitle: "Your rights",
+        privacyRightsIntro: "Depending on the circumstances, you have the right to:",
+        privacyRightAccess: "access and correct your personal data,",
+        privacyRightDelete: "request erasure or restriction of processing,",
+        privacyRightObject: "object to processing,",
+        privacyRightPortability: "data portability where the legal conditions are met,",
+        privacyRightConsent: "withdraw analytics consent at any time,",
+        privacyRightComplaint: "lodge a complaint with a supervisory authority.",
+        privacyContactTitle: "Contact and supervisory authority",
+        privacyContactText: "You can exercise your rights at info@lv94.cz. The Czech supervisory authority is the Office for Personal Data Protection.",
         cookiesTitle: "Cookie Information",
-        cookiesPlaceholder: "[ADD FINAL COOKIE INFORMATION TEXT]",
+        cookiesIntro: "The website uses technical storage to remember your choice and, with your consent, Google Analytics 4 cookies.",
+        cookiesNecessaryTitle: "Technical storage",
+        cookiesNecessaryText: "The lv94-analytics-consent value in your browser's local storage records whether you accepted or rejected analytics. It is needed for the website to reliably respect your choice.",
+        cookiesAnalyticsTitle: "Analytics cookies",
+        cookiesAnalyticsText: "Google Analytics loads only after you click Accept. It helps us understand aggregated website traffic and usage. If you reject analytics, it does not load.",
+        cookiesTableType: "Type",
+        cookiesTableName: "Name",
+        cookiesTablePurpose: "Purpose",
+        cookiesTableDuration: "Duration",
+        cookiesLocalType: "Local storage",
+        cookiesLocalPurpose: "Remembering your analytics choice",
+        cookiesLocalDuration: "Until you change the choice or delete website data",
+        cookiesGaType: "Cookie",
+        cookiesGaPurpose: "Distinguishing visitors and sessions",
+        cookiesGaStatePurpose: "Keeping Google Analytics session state",
+        cookiesGaDuration: "Up to 2 years after consent",
+        cookiesChoiceTitle: "How to change your choice",
+        cookiesChoiceText: "You can change your consent at any time using Cookie Settings in the footer. You can also delete cookies and local storage in your browser settings.",
+        cookiesProviderTitle: "Analytics provider",
+        cookiesProviderText: "Google Analytics is provided by Google Ireland Limited. More information about data processing is available in Google's Privacy Policy.",
         privacyPageTitle: "LV94 | Privacy Policy",
         cookiesPageTitle: "LV94 | Cookie Information",
     }),
@@ -157,6 +393,10 @@ function getPageType() {
         return "cookies";
     }
 
+    if (path.endsWith("/dovoz-vozidel.html") || path.endsWith("dovoz-vozidel.html")) {
+        return "import";
+    }
+
     return "home";
 }
 
@@ -174,16 +414,23 @@ function applyPageTitle(language) {
         return;
     }
 
-    document.title = translations.pageTitle;
+    if (pageType === "import") {
+        document.title = translations.importPageTitle;
+    } else {
+        document.title = translations.pageTitle;
+    }
 
     const description = document.querySelector('meta[name="description"]');
     const openGraphTitle = document.querySelector('meta[property="og:title"]');
     const openGraphDescription = document.querySelector('meta[property="og:description"]');
     const openGraphLocale = document.querySelector('meta[property="og:locale"]');
 
-    if (description) description.content = translations.metaDescription;
-    if (openGraphTitle) openGraphTitle.content = translations.pageTitle;
-    if (openGraphDescription) openGraphDescription.content = translations.metaDescription;
+    const pageTitle = pageType === "import" ? translations.importPageTitle : translations.pageTitle;
+    const metaDescription = pageType === "import" ? translations.importMetaDescription : translations.metaDescription;
+
+    if (description) description.content = metaDescription;
+    if (openGraphTitle) openGraphTitle.content = pageTitle;
+    if (openGraphDescription) openGraphDescription.content = metaDescription;
     if (openGraphLocale) openGraphLocale.content = language === "cs" ? "cs_CZ" : "en_GB";
 }
 
@@ -242,8 +489,10 @@ function populateProjectData() {
         element.textContent = SITE_DATA.contact.email;
     });
 
+    const phoneNumber = SITE_DATA.contact.phone.replace(/\s/g, "");
+
     document.querySelectorAll('[data-contact-link="phone"]').forEach((element) => {
-        element.setAttribute("href", `tel:${SITE_DATA.contact.phone}`);
+        element.setAttribute("href", `tel:${phoneNumber}`);
     });
 
     document.querySelectorAll('[data-contact-link="email"]').forEach((element) => {
@@ -273,6 +522,12 @@ function populateProjectData() {
     Object.entries(SITE_DATA.vehicle).forEach(([key, value]) => {
         document.querySelectorAll(`[data-vehicle="${key}"]`).forEach((element) => {
             element.textContent = typeof value === "object" ? value[currentLanguage] : value;
+        });
+    });
+
+    Object.entries(SITE_DATA.pricing).forEach(([key, value]) => {
+        document.querySelectorAll(`[data-pricing="${key}"]`).forEach((element) => {
+            element.textContent = value;
         });
     });
 }
@@ -588,9 +843,17 @@ function loadAnalytics() {
         window.dataLayer.push(arguments);
     };
 
+    window.gtag("consent", "default", {
+        analytics_storage: "granted",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+    });
     window.gtag("js", new Date());
     window.gtag("config", SITE_DATA.analyticsId, {
         anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
     });
 
     analyticsLoaded = true;
