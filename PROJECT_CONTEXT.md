@@ -62,6 +62,8 @@ Web bude dvojjazyčný:
 - čeština ako predvolený jazyk
 - angličtina ako sekundárny jazyk
 
+Zvolený jazyk sa ukladá do miestneho úložiska prehliadača pod kľúčom `lv94-language` a obnovuje sa pri prechode medzi stránkami aj po obnovení či ďalšej návšteve. Pri prvej návšteve je predvolená čeština. Ak úložisko nie je dostupné, prepínač zostáva funkčný pre aktuálnu stránku.
+
 Prepínač jazyka je horizontálny posuvník medzi `CZ` a `EN`. Jazyk sa prepína bez načítania novej stránky.
 
 Obe verzie musia mať rovnaký obsah. Texty v zdrojovom kóde ulož prehľadne, aby sa dali ľahko upravovať.
@@ -616,7 +618,11 @@ Na výslovnú požiadavku používateľa vznikla samostatná podstránka:
 src/dovoz-vozidel.html
 ```
 
-Podstránka je druhým pilierom ponuky LV94 a vizuálne nadväzuje na hlavnú stránku. Obsahuje:
+Podstránka je druhým pilierom ponuky LV94 a vizuálne nadväzuje na hlavnú stránku.
+
+Úvod podstránky zdieľa s indexom triedy `service`, `service-hero`, `service-background`, `service-layout`, `service-copy`, `service-heading` a `service-lead`. Nadpis a text sú centrované s rovnakou typografiou a šírkami aj na veľkých monitoroch; tlačidlá pod textom centruje spoločná trieda `service-actions`. Samostatné nastavenie sa používa iba na výrez fotografie Dovozu.
+
+Obsahuje:
 
 - predkúpnu obhliadku s meraním laku, diagnostikou, vizuálnou kontrolou a fotodokumentáciou za `5 000 Kč`
 - komunikáciu s predávajúcim, dohodnutie obhliadky a dovoz vozidla s formuláciou `Doprava vozidla až k vám`

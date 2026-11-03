@@ -182,7 +182,7 @@ const TRANSLATIONS = Object.freeze({
         cookiesTitle: "Informace o cookies",
         cookiesIntro: "Web používá technické úložiště pro zapamatování vaší volby a po vašem souhlasu analytické cookies Google Analytics 4.",
         cookiesNecessaryTitle: "Technické úložiště",
-        cookiesNecessaryText: "Hodnota lv94-analytics-consent v místním úložišti prohlížeče uchovává informaci, zda jste analytiku přijali nebo odmítli. Bez ní by se web nemohl spolehlivě řídit vaší volbou.",
+        cookiesNecessaryText: "Hodnota lv94-analytics-consent v místním úložišti prohlížeče uchovává informaci, zda jste analytiku přijali nebo odmítli. Hodnota lv94-language si pamatuje zvolený jazyk, aby zůstal zachován při přechodu mezi stránkami a při další návštěvě.",
         cookiesAnalyticsTitle: "Analytické cookies",
         cookiesAnalyticsText: "Google Analytics se načte až po kliknutí na tlačítko Přijmout. Pomáhá nám porozumět souhrnné návštěvnosti a používání webu. Při odmítnutí se analytika nenačte.",
         cookiesTableType: "Typ",
@@ -191,6 +191,7 @@ const TRANSLATIONS = Object.freeze({
         cookiesTableDuration: "Doba",
         cookiesLocalType: "Místní úložiště",
         cookiesLocalPurpose: "Zapamatování vaší volby analytiky",
+        cookiesLanguagePurpose: "Zapamatování zvoleného jazyka",
         cookiesLocalDuration: "Do změny volby nebo vymazání dat webu",
         cookiesGaType: "Cookie",
         cookiesGaPurpose: "Rozlišení návštěvníků a relací",
@@ -355,7 +356,7 @@ const TRANSLATIONS = Object.freeze({
         cookiesTitle: "Cookie Information",
         cookiesIntro: "The website uses technical storage to remember your choice and, with your consent, Google Analytics 4 cookies.",
         cookiesNecessaryTitle: "Technical storage",
-        cookiesNecessaryText: "The lv94-analytics-consent value in your browser's local storage records whether you accepted or rejected analytics. It is needed for the website to reliably respect your choice.",
+        cookiesNecessaryText: "The lv94-analytics-consent value in your browser's local storage records whether you accepted or rejected analytics. The lv94-language value remembers your chosen language so it is kept when navigating between pages and on your next visit.",
         cookiesAnalyticsTitle: "Analytics cookies",
         cookiesAnalyticsText: "Google Analytics loads only after you click Accept. It helps us understand aggregated website traffic and usage. If you reject analytics, it does not load.",
         cookiesTableType: "Type",
@@ -364,6 +365,7 @@ const TRANSLATIONS = Object.freeze({
         cookiesTableDuration: "Duration",
         cookiesLocalType: "Local storage",
         cookiesLocalPurpose: "Remembering your analytics choice",
+        cookiesLanguagePurpose: "Remembering your chosen language",
         cookiesLocalDuration: "Until you change the choice or delete website data",
         cookiesGaType: "Cookie",
         cookiesGaPurpose: "Distinguishing visitors and sessions",
@@ -379,6 +381,7 @@ const TRANSLATIONS = Object.freeze({
 });
 
 const CONSENT_KEY = "lv94-analytics-consent";
+const LANGUAGE_KEY = "lv94-language";
 let currentLanguage = "cs";
 let analyticsLoaded = false;
 
@@ -532,10 +535,28 @@ function populateProjectData() {
     });
 }
 
+function getStoredLanguage() {
+    try {
+        const language = window.localStorage.getItem(LANGUAGE_KEY);
+        if (language === "cs" || language === "en") return language;
+    } catch {
+        // Use Czech when browser storage is unavailable.
+    }
+
+    return "cs";
+}
+
 function initLanguageSwitcher() {
     document.querySelectorAll("[data-language]").forEach((button) => {
         button.addEventListener("click", () => {
-            applyLanguage(button.dataset.language);
+            const language = button.dataset.language;
+            applyLanguage(language);
+
+            try {
+                window.localStorage.setItem(LANGUAGE_KEY, language);
+            } catch {
+                // Language switching still works without persistent storage.
+            }
         });
     });
 }
@@ -947,6 +968,7 @@ function initCookieConsent() {
 }
 
 populateProjectData();
+applyLanguage(getStoredLanguage());
 initLanguageSwitcher();
 initLogoFallback();
 initReveals();
@@ -954,4 +976,3 @@ initSlider();
 initGallery();
 initHeaderState();
 initCookieConsent();
-applyLanguage("cs");
