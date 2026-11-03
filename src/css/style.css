@@ -174,11 +174,6 @@ img {
     height: 100%;
     min-height: 0;
     overflow: hidden;
-    transition: width var(--transition);
-}
-
-.site-header.is-scrolled .brand--header {
-    width: clamp(6rem, 11vw, 10rem);
 }
 
 .brand img {
@@ -191,6 +186,9 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 160%;
+    max-width: none;
+    mix-blend-mode: lighten;
     transform: translate(-50%, -50%);
 }
 

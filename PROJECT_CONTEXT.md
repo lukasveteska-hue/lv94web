@@ -34,12 +34,12 @@ Hlavný trh je Česká republika. Služba môže byť po dohode dostupná aj kli
 
 ## 3. Logo
 
-Použi dodané logo LV94 CARS ako hlavné logo webu.
+Použi schválené minimalistické logo LV94 CARS s prepojeným LV a drobným červeným zakončením vodorovného ťahu číslice 4. Používateľ vybral túto verziu 3. novembra 2026.
 
 Očakávaná cesta v projekte:
 
 ```text
-src/assets/images/lv94-logo.png
+src/assets/images/lv94-logo-minimal-red-v1.png
 ```
 
 Pravidlá:
@@ -50,6 +50,9 @@ Pravidlá:
 - používať ho na tmavom pozadí
 - neprekrývať ho ďalšími nápismi alebo sloganom
 - logo je v hlavičke zámerne väčšie, ale nesmie zväčšovať výšku samotnej hlavičky
+- na všetkých stránkach si logo zachováva rovnakú väčšiu veľkosť aj po posunutí stránky
+- schválený obrázok má veľké vonkajšie okraje; v hlavičke sa orežú cez CSS a tmavé pozadie splynie pomocou `mix-blend-mode: lighten`
+- pôvodné logo `src/assets/images/lv94-logo.png` zostáva uložené ako starší podklad
 - logo sa v úvodnej sekcii nepoužíva
 
 ## 4. Jazykové verzie
