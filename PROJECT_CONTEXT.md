@@ -632,7 +632,7 @@ Obsahuje:
 - upozornenie, že predkúpna obhliadka je orientačné praktické preverenie a nenahrádza detailnú kontrolu v autorizovanom alebo špecializovanom servise
 - českú a anglickú jazykovú verziu a rovnaké kontaktné možnosti ako hlavná stránka
 
-Hlavička všetkých stránok obsahuje dve stručné položky `Pronájem` a `Dovoz`. Na hlavnej stránke odkaz `Pronájem` plynulo posunie návštevníka k sekcii Mercedes-Benz GLE s identifikátorom `#vozidlo`; z ostatných stránok smeruje na `index.html#vozidlo`. Odkaz `Dovoz` otvára `dovoz-vozidel.html`.
+Hlavička všetkých stránok obsahuje dve stručné položky `Pronájem` a `Dovoz`. Na hlavnej stránke odkaz `Pronájem` plynulo posunie návštevníka k sekcii Mercedes-Benz GLE s identifikátorom `#vozidlo`. Z Dovozu vedie na začiatok hlavnej stránky; z právnych podstránok na `index.html#vozidlo`. Odkaz `Dovoz` otvára `dovoz-vozidel.html`.
 
 Používateľ výslovne nechce verejne komunikovať spôsob zabezpečenia prepravy ani uvádzať externého prepravcu. Používaj jednoduchú formuláciu, že LV94 zabezpečí dopravu vozidla až ku klientovi.
 
