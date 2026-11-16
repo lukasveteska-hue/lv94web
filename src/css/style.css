@@ -1793,17 +1793,19 @@ img {
     }
 
     .header-inner {
+        display: grid;
+        grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
         padding-bottom: 0;
     }
 
     .primary-nav {
-        top: 50%;
-        right: auto;
-        bottom: auto;
-        left: 50%;
+        position: static;
         height: 100%;
         border-top: 0;
-        transform: translate(-50%, -50%);
+    }
+
+    .header-inner > :last-child {
+        justify-self: end;
     }
 
     .primary-nav a {
