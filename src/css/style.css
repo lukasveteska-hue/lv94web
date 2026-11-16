@@ -606,7 +606,12 @@ img {
     grid-column: 1 / -1;
 }
 
-.service-bridge-copy {
+.section-intro {
+    max-width: 46rem;
+    margin: clamp(1.5rem, 3vw, 2rem) auto 0;
+    color: var(--color-muted);
+    font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+    line-height: 1.7;
     text-align: center;
 }
 
@@ -1027,13 +1032,6 @@ img {
     margin: 1.5rem auto 0;
 }
 
-.process-heading p {
-    margin: clamp(1.5rem, 3vw, 2rem) 0 0;
-    color: var(--color-muted);
-    font-size: clamp(0.95rem, 1.5vw, 1.08rem);
-    line-height: 1.7;
-}
-
 .process-list {
     --step-marker-gap: clamp(0.8rem, 2vw, 1.2rem);
     --step-number-size: clamp(2.8rem, 8vw, 4.5rem);
@@ -1149,11 +1147,7 @@ img {
 }
 
 .contact-intro {
-    max-width: 44rem;
-    margin: 0 0 clamp(2rem, 4vw, 2.8rem);
-    color: var(--color-muted);
-    font-size: clamp(0.95rem, 1.4vw, 1.08rem);
-    line-height: 1.7;
+    margin: 0 auto clamp(2rem, 4vw, 2.8rem);
 }
 
 .contact-actions {
@@ -2157,7 +2151,6 @@ img {
     text-align: center;
 }
 
-.import-section-heading > p,
 .inspection-detail-copy > p {
     max-width: 52rem;
     margin: clamp(1.75rem, 3vw, 2.5rem) auto 0;
@@ -2390,24 +2383,11 @@ img {
 }
 
 .service-bridge-layout {
-    display: grid;
-    align-items: center;
-    gap: 2.5rem;
-}
-
-.service-bridge-copy {
-    max-width: 58rem;
-}
-
-.service-bridge-copy p {
-    max-width: 46rem;
-    margin: 1.5rem 0 0;
-    color: var(--color-muted);
-    line-height: 1.75;
+    text-align: center;
 }
 
 .service-bridge .button {
-    justify-self: start;
+    margin-top: 2rem;
     padding-inline: 1.4rem;
 }
 
@@ -2451,10 +2431,6 @@ img {
 
     .import-process-list li:nth-last-child(-n + 2) {
         border-bottom: 0;
-    }
-
-    .service-bridge-layout {
-        grid-template-columns: minmax(0, 1fr) auto;
     }
 }
 
