@@ -96,8 +96,7 @@ Minimalistická hlavička bez klasického menu a bez hamburger menu.
 - logo sa v úvodnej sekcii nezobrazuje
 - ako plnošírkové pozadie sa používa lokálny obrázok detailu vozidla `src/assets/images/hero-car-detail.png`
 - obrázok má zostať dobre viditeľný; nepoužívaj naň príliš silné stmavenie alebo nízku opacity
-- spodná časť hero obrázka musí plynulo prechádzať gradientom do čierneho pozadia bez ostrej hrany
-- na širokých monitoroch sa hero obrázok stráca do čiernej aj na ľavom a pravom okraji, aby nebolo viditeľné jeho orezanie
+- pozadia sekcií sú jednofarebné; hero fotografie majú rovnomerné stmavenie bez gradientu
 - samostatný obrázok napravo sa nepoužíva
 - hlavný nadpis je v množnom čísle: `Pronájem prémiových vozidel`
 - horizontálna linka pod nadpisom začína naľavo presne s ľavým okrajom nadpisu, rovnako ako linka pri nadpise Mercedes-Benz
@@ -331,7 +330,7 @@ Vyber moderné, čisté bezpätkové písmo. Nepoužívaj dekoratívne, retro an
 
 Preferuj systémový font stack alebo jeden ľahký webfont. Nevkladaj veľké množstvo rezov písma.
 
-Všetky hlavné nadpisy sekcií používajú rovnakú veľkosť, váhu, riadkovanie a prirodzenú kapitalizáciu bez automatického prevodu na verzálky. Zarovnanie nadpisov sa riadi kompozíciou konkrétnej sekcie.
+Všetky hlavné nadpisy sekcií používajú rovnakú veľkosť, váhu, riadkovanie a prirodzenú kapitalizáciu bez automatického prevodu na verzálky. Všetky viditeľné nadpisy H2 sú vycentrované spoločnou triedou `section-title--centered`.
 
 ## 8. Animácie
 
